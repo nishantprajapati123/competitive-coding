@@ -12,21 +12,24 @@ using namespace std;
 int main()
 {
     fastIO
-    ll n,m;
-    cin>>n>>m;
-    ll team=0;
-    while(n && m)
+    ll t;
+    cin >> t;
+
+    while(t--)
     {
-        if(n+m >=3)
-        {
-            if(n<=m)
-                n--,m-=2;
-            else
-                m--,n-=2;
-            team++;
-        }
+        ll n,p;
+        cin>>n>>p;
+        if(n==1 || n==2)
+            cout<<p*p*p<<"\n";
         else
-            break;
+        {
+            //find number
+            ll no=(n/2)+1;
+            //find maximum modulo
+             ll mx= n%no;
+            cout<<((p-mx)*(p-mx))+((p-n)*(p-mx))+((p-n)*(p-n))<<"\n";
+        }
     }
-    cout<<team;
+    return 0;
 }
+
