@@ -59,7 +59,6 @@ public:
             swap_value(&heap[i],&heap[smallest]);
             minHeapify(smallest);
         }
-
     }
     void show_heap()
         {

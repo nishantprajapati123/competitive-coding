@@ -37,7 +37,6 @@ int heightBt(BTNode *root)
                     que.push(root->right);
                 n--;
             }
-
         }
         return (height-1);
 

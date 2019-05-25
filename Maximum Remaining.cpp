@@ -12,11 +12,23 @@ using namespace std;
 int main()
 {
     fastIO
-    int t;
-    cin>>t;
-    while(t--)
+    ll n;
+    cin>>n;
+    vector<ll>A(n);
+    for(ll i=0;i<n;i++) cin>>A[i];
+    sort(A.begin(),A.end());
+    ll mx = A[n-1];
+    ll res,i=n-2;
+    while(i>=0)
     {
-
+        if(A[i]!=mx)
+        {
+            cout<<A[i];
+            break;
+        }
+        mx = A[i];
+        i--;
     }
+    if(i==-1)   cout<<0;
     return 0;
 }

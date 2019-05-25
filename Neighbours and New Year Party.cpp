@@ -12,11 +12,25 @@ using namespace std;
 int main()
 {
     fastIO
+    freopen("input.txt","r",stdin);
     int t;
-    cin>>t;
+    cin >> t;
+
     while(t--)
     {
-
+        ll n;
+        cin>>n;
+        vector<ll>A(n);
+        vector<ll>M(n,0);
+        for(ll i=0;i<n;i++) cin>>A[i];
+        M[0] = A[0];
+        M[1] = max(M[0],A[1]);
+        for(ll i=2;i<n;i++)
+            M[i] = max(M[i-1],max(M[i-2]+A[i],A[i]));
+        for(auto i:M)
+            cout<<i<<" ";
+        cout<<endl;
     }
     return 0;
 }
+

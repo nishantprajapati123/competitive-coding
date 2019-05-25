@@ -31,11 +31,12 @@ node* mergeNode(node *headA, node *headB)
         return q;
     if(q==NULL)
         return p;
+    if(p && q)
+    {
     if(p->data < q->data)
     {
         s=p;
         head=p;
-        p->next=q;
         p=s->next;
 
     }
@@ -43,23 +44,27 @@ node* mergeNode(node *headA, node *headB)
     {
         head=q;
         s=q;
-        q->next=p;
+//        q->next=p;
         q=s->next;
+    }
     }
     while(p&&q)
     {
         if(p->data < q->data)
         {
+            s->next = p;
             s=p;
-            p->next=q;
+//            p->next=q;
             p=s->next;
         }
         else
         {
+            s->next = q;
             s=q;
-            q->next=p;
+//            q->next=p;
             q=s->next;
         }
+//        cout<<"ok"<<endl;
 
     }
     if(p)
@@ -85,8 +90,7 @@ int main()
     head= mergeNode(headA,headB);
 
 
-    cout<<"OK";
-
+//    cout<<"OK";
     while(head)
     {
         cout<<head->data<<" ";
