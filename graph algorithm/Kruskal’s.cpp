@@ -10,7 +10,7 @@ int find_(int x)            //this function finds the representative of subset
     }
     return x;
 }
-int union_(int x,int y)
+void union_(int x,int y)
 {
     int px=find_(x);        //find representative of x
     int py=find_(y);        //find representative of y
